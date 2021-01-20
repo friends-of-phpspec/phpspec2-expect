@@ -41,7 +41,7 @@ if (e710d4e7_friends_of_phpspec_use_expect() && !function_exists('expect')) {
         $reflectionFactory = new ReflectionFactory();
         $exampleNode = new ExampleNode('expect', new \ReflectionFunction(__FUNCTION__));
 
-        $matchers  = new MatcherManager($presenter);
+        $matchers = new MatcherManager($presenter);
         $matchers->add(new Matcher\IdentityMatcher($presenter));
         $matchers->add(new Matcher\ComparisonMatcher($presenter));
         $matchers->add(new Matcher\ThrowMatcher($unwrapper, $presenter, $reflectionFactory));
@@ -56,17 +56,11 @@ if (e710d4e7_friends_of_phpspec_use_expect() && !function_exists('expect')) {
         $matchers->add(new Matcher\StringEndMatcher($presenter));
         $matchers->add(new Matcher\StringRegexMatcher($presenter));
         $matchers->add(new Matcher\StringContainMatcher($presenter));
-        if (class_exists('PhpSpec\Matcher\TriggerMatcher')) {
-            $matchers->add(new Matcher\TriggerMatcher($unwrapper));
-        }
-        if (class_exists('PhpSpec\Matcher\IterateAsMatcher')) {
-            $matchers->add(new Matcher\IterateAsMatcher($presenter));
-        }
-        if (class_exists('PhpSpec\Matcher\ApproximatelyMatcher')) {
-            $matchers->add(new Matcher\ApproximatelyMatcher($presenter));
-        }
+        $matchers->add(new Matcher\TriggerMatcher($unwrapper));
+        $matchers->add(new Matcher\IterateAsMatcher($presenter));
+        $matchers->add(new Matcher\ApproximatelyMatcher($presenter));
 
-        $trace = debug_backtrace();
+        $trace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 2);
         if (isset($trace[1]['object'])) {
             $object = $trace[1]['object'];
 
