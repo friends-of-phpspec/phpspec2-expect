@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "files": [
-            "expect.php"
+            "src/expect.php"
         ],
         "psr-4": {
             "FriendsOfPhpSpec\\PhpSpec\\Expect\\": "src/"
@@ -27,8 +27,9 @@
         "squizlabs/php_codesniffer": "^3.5"
     },
     "scripts": {
-        "lint": "phpcs --standard=PSR12 src expect.php",
-        "test": "phpunit"
+        "lint": "phpcs --standard=PSR12 src",
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-html coverage --coverage-filter src"
     },
     "config": {
         "sort-packages": true
