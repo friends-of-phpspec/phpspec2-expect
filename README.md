@@ -22,11 +22,12 @@ expect(file_exists('dummy.txt'))->toBe(true);
 
 ## Compatibility
 
-Version `2.x` supports PhpSpec 3 and PHP 5.6.
-
-Version `3.0.x` requires PhpSpec 4, and therefore requires PHP 7.
-
-Version `3.1.x` requires PhpSpec 5 and PHP 7.
+| phpspec-expect | PHP      | phpspec                    |
+|----------------|----------|----------------------------|
+| 2.x            | `>=5.6`  | `^3.0`                     |
+| 3.0.x          | `>=7.0`  | `^4.0`                     |
+| 3.1.x          | `^7.1`   | `^5.0 \|\| ^6.0`           |
+| 4.x            | `>=7.3`  | `^6.0 \|\| ^7.0`           |
 
 ## Authors
 
