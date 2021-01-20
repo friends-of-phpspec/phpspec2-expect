@@ -1,7 +1,7 @@
 <?php
 
-use Bossa\PhpSpec\Expect\Subject;
-use Bossa\PhpSpec\Expect\Wrapper;
+use FriendsOfPhpSpec\PhpSpec\Expect\Subject;
+use FriendsOfPhpSpec\PhpSpec\Expect\Wrapper;
 use PhpSpec\CodeAnalysis\MagicAwareAccessInspector;
 use PhpSpec\CodeAnalysis\VisibilityAccessInspector;
 use PhpSpec\Console\Assembler\PresenterAssembler;

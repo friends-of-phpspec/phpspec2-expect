@@ -1,6 +1,6 @@
 <?php
 
-namespace Bossa\PhpSpec\Expect;
+namespace FriendsOfPhpSpec\PhpSpec\Expect;
 
 use PhpSpec\Wrapper\Subject as BaseSubject;
 

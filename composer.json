@@ -1,25 +1,37 @@
 {
-    "name":         "bossa/phpspec2-expect",
-    "description":  "Helper that decorates any SUS with a phpspec lazy object wrapper",
-    "keywords":     ["BDD", "SpecBDD", "TDD", "spec", "specification"],
-    "license":      "MIT",
-    "authors":      [
-         {
-             "name": "Marcello Duarte",
-             "homepage": "http://marcelloduarte.net/"
-         }
+    "name": "friends-of-phpspec/phpspec-expect",
+    "type": "library",
+    "description": "Helper that decorates any SUS with a phpspec lazy object wrapper",
+    "keywords": [
+        "BDD",
+        "SpecBDD",
+        "TDD",
+        "spec",
+        "specification"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcello Duarte",
+            "homepage": "http://marcelloduarte.net/"
+        }
     ],
     "autoload": {
-        "files": ["expect.php"],
-        "psr-0": {
-            "Bossa\\PhpSpec\\Expect\\": ""
+        "files": [
+            "expect.php"
+        ],
+        "psr-4": {
+            "FriendsOfPhpSpec\\PhpSpec\\Expect\\": "src/"
         }
     },
     "require": {
-        "php": "^7.1",
+        "php": ">=7.1",
         "phpspec/phpspec": "^5.0 || ^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }

@@ -1,19 +1,19 @@
 <?php
 
-namespace Bossa\PhpSpec\Expect;
+namespace FriendsOfPhpSpec\PhpSpec\Expect;
 
 use PhpSpec\CodeAnalysis\AccessInspector;
 use PhpSpec\Exception\ExceptionFactory;
-use PhpSpec\Runner\MatcherManager;
 use PhpSpec\Formatter\Presenter\Presenter;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use PhpSpec\Loader\Node\ExampleNode;
+use PhpSpec\Runner\MatcherManager;
 use PhpSpec\Wrapper\Subject as BaseSubject;
-use PhpSpec\Wrapper\Subject\WrappedObject;
 use PhpSpec\Wrapper\Subject\Caller;
-use PhpSpec\Wrapper\Subject\SubjectWithArrayAccess;
 use PhpSpec\Wrapper\Subject\ExpectationFactory;
+use PhpSpec\Wrapper\Subject\SubjectWithArrayAccess;
+use PhpSpec\Wrapper\Subject\WrappedObject;
 use PhpSpec\Wrapper\Wrapper as BaseWrapper;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Wrapper extends BaseWrapper
 {
