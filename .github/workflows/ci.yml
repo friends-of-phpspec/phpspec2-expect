@@ -30,5 +30,8 @@ jobs:
       - name: Install dependencies
         run: composer install --no-progress --no-suggest --prefer-dist
 
-      - name: Run phpunit
+      - name: Test
         run: composer run test
+
+      - name: Lint
+        run: composer run lint

@@ -23,9 +23,13 @@ class Wrapper extends BaseWrapper
     private $example;
     private $accessInspector;
 
-    public function __construct(MatcherManager $matchers, Presenter $presenter,
-        EventDispatcherInterface $dispatcher, ExampleNode $example, AccessInspector $accessInspector)
-    {
+    public function __construct(
+        MatcherManager $matchers,
+        Presenter $presenter,
+        EventDispatcherInterface $dispatcher,
+        ExampleNode $example,
+        AccessInspector $accessInspector
+    ) {
         $this->matchers = $matchers;
         $this->presenter = $presenter;
         $this->dispatcher = $dispatcher;
@@ -35,9 +39,9 @@ class Wrapper extends BaseWrapper
 
     public function wrap($value = null): BaseSubject
     {
-        $exceptionFactory   = new ExceptionFactory($this->presenter);
-        $wrappedObject      = new WrappedObject($value, $this->presenter);
-        $caller             = new Caller(
+        $exceptionFactory = new ExceptionFactory($this->presenter);
+        $wrappedObject = new WrappedObject($value, $this->presenter);
+        $caller = new Caller(
             $wrappedObject,
             $this->example,
             $this->dispatcher,
@@ -45,13 +49,9 @@ class Wrapper extends BaseWrapper
             $this,
             $this->accessInspector
         );
-
-        $arrayAccess        = new SubjectWithArrayAccess($caller, $this->presenter, $this->dispatcher);
+        $arrayAccess = new SubjectWithArrayAccess($caller, $this->presenter, $this->dispatcher);
         $expectationFactory = new ExpectationFactory($this->example, $this->dispatcher, $this->matchers);
 
-        return new Subject(
-            $value, $this, $wrappedObject, $caller, $arrayAccess, $expectationFactory
-        );
+        return new Subject($value, $this, $wrappedObject, $caller, $arrayAccess, $expectationFactory);
     }
 }
-
