@@ -72,13 +72,13 @@ if (e710d4e7_friends_of_phpspec_use_expect() && !function_exists('expect')) {
 
             if ($object instanceof Matcher\MatchersProvider) {
                 foreach ($object->getMatchers() as $name => $matcher) {
-                    if ($matcher instanceof Matcher) {
+                    if ($matcher instanceof Matcher\Matcher) {
                         $matchers->add($matcher);
                     } elseif (is_callable($matcher)) {
                         $matchers->add(new Matcher\CallbackMatcher($name, $matcher, $presenter));
                     } else {
                         throw new \RuntimeException(
-                            'Custom matcher has to implement "PhpSpec\Matcher\MatcherInterface" or be a callable'
+                            'Custom matcher has to implement "PhpSpec\Matcher\Matcher" or be a callable'
                         );
                     }
                 }
