@@ -6,8 +6,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Marcello Duarte",
-            "homepage": "http://marcelloduarte.net/"
+            "name": "Marcello Duarte"
         }
     ],
     "autoload": {
