@@ -1,8 +1,7 @@
-[![Latest Stable Version](https://img.shields.io/packagist/v/friends-of-phpspec/phpspec-expect.svg?style=flat-square)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
-[![GitHub stars](https://img.shields.io/github/stars/friends-of-phpspec/phpspec-expect.svg?style=flat-square)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
-[![Total Downloads](https://img.shields.io/packagist/dt/friends-of-phpspec/phpspec-expect.svg?style=flat-square)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/friends-of-phpspec/phpspec-expect/Continuous%20Integration?style=flat-square)](https://github.com/friends-of-phpspec/phpspec-expect/actions)
-[![License](https://img.shields.io/packagist/l/friends-of-phpspec/phpspec-expect.svg?style=flat-square)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
+[![Latest Stable Version](https://img.shields.io/packagist/v/friends-of-phpspec/phpspec-expect.svg)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
+[![Total Downloads](https://img.shields.io/packagist/dt/friends-of-phpspec/phpspec-expect.svg)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
+[![Continuous Integration](https://github.com/friends-of-phpspec/phpspec-expect/actions/workflows/ci.yml/badge.svg)](https://github.com/friends-of-phpspec/phpspec-expect/actions/workflows/ci.yml)
+[![License](https://img.shields.io/packagist/l/friends-of-phpspec/phpspec-expect.svg)](https://packagist.org/packages/friends-of-phpspec/phpspec-expect)
 
 # phpspec-expect
 
