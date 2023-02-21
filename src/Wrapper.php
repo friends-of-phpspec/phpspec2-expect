@@ -17,11 +17,11 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Wrapper extends BaseWrapper
 {
-    private $matchers;
-    private $presenter;
-    private $dispatcher;
-    private $example;
-    private $accessInspector;
+    private MatcherManager $matchers;
+    private Presenter $presenter;
+    private EventDispatcherInterface $dispatcher;
+    private ExampleNode $example;
+    private AccessInspector $accessInspector;
 
     public function __construct(
         MatcherManager $matchers,

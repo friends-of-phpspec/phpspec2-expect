@@ -1,9 +1,11 @@
 <?php
 
+namespace FriendsOfPhpSpec\PhpSpec\Tests;
+
 /**
  * Test fixture used in ExpectTest
  */
-class Foo implements Countable
+class Foo implements \Countable
 {
     function isFoo()
     {
@@ -23,7 +25,7 @@ class Foo implements Countable
     }
     public function throwException()
     {
-        throw new InvalidArgumentException;
+        throw new \InvalidArgumentException;
     }
     public function triggerError()
     {
