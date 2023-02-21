@@ -1,5 +1,7 @@
 <?php
 
+namespace FriendsOfPhpSpec\PhpSpec\Tests;
+
 use PhpSpec\Exception\Example\FailureException;
 use PhpSpec\Matcher\BasicMatcher;
 

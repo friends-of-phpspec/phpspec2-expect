@@ -1,7 +1,6 @@
 <?php
 
-include __DIR__ . '/Foo.php';
-include __DIR__ . '/FooMatcher.php';
+namespace FriendsOfPhpSpec\PhpSpec\Tests;
 
 use PhpSpec\Exception\Exception as PhpSpecException;
 use PhpSpec\Matcher\MatchersProvider;
@@ -9,47 +8,39 @@ use PHPUnit\Framework\TestCase;
 
 class ExpectTest extends TestCase implements MatchersProvider
 {
-    private $addInvalidMatcher;
+    private bool $addInvalidMatcher = false;
 
-    function setUp(): void
+    protected function setUp(): void
     {
         $this->addInvalidMatcher = false;
     }
 
     /**
-     * @test
      * @dataProvider correctExpectations
      */
-    function it_does_not_throw_when_expectation_is_met($expectation)
+    public function testItDoesNotThrowWhenExpectationIsMet($expectation): void
     {
         $expectation();
         $this->addToAssertionCount(1); // No exception thrown
     }
 
     /**
-     * @test
      * @dataProvider incorrectExpectations
      */
-    function it_throws_when_expectation_is_not_met($expectation)
+    public function testItThrowsWhenExpectationIsNotMet($expectation): void
     {
         $this->expectException(PhpSpecException::class);
         $expectation();
     }
 
-    /**
-     * @test
-     */
-    function it_throws_when_custom_matcher_does_not_implement_correct_interface()
+    public function testItThrowsWhenCustomMatcherDoesNotImplementCorrectInterface(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
         $this->addInvalidMatcher = true;
         expect(1)->toBe(1);
     }
 
-    /**
-     * @test
-     */
-    function it_can_be_deactivated()
+    public function testItCanBeDeactivated(): void
     {
         // Active by default
         $this->assertTrue(e710d4e7_friends_of_phpspec_use_expect());
@@ -67,13 +58,13 @@ class ExpectTest extends TestCase implements MatchersProvider
     /**
      * Cases that should evaluate without an exception
      */
-    function correctExpectations()
+    public function correctExpectations(): array
     {
         return [
             [ function () { expect(5)->toBe(5); } ],
             [ function () { expect(5)->notToBe(1); } ],
             [ function () { expect(5)->toBeLike('5'); } ],
-            [ function () { expect((new Foo()))->toHaveType('Foo'); } ],
+            [ function () { expect((new Foo()))->toHaveType(Foo::class); } ],
             [ function () { expect((new Foo()))->toHaveCount(1); } ],
             [ function () { expect((new Foo()))->toBeFoo(); } ],
             [ function () { expect((new Foo())->getArray())->toBeArray(); } ],
@@ -98,7 +89,7 @@ class ExpectTest extends TestCase implements MatchersProvider
     /**
      * Cases that should throw an exception when evaluated
      */
-    function incorrectExpectations()
+    public function incorrectExpectations(): array
     {
         return [
             [ function () { expect(6)->toBe(5); } ],
@@ -132,7 +123,7 @@ class ExpectTest extends TestCase implements MatchersProvider
         return [
             'haveKey' => function ($subject, $key) { return array_key_exists($key, $subject); },
             'haveFoo' => new FooMatcher(),
-            'haveBar' => $this->addInvalidMatcher ? new stdClass() : new FooMatcher(),
+            'haveBar' => $this->addInvalidMatcher ? new \stdClass() : new FooMatcher(),
         ];
     }
 }
