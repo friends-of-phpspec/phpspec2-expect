@@ -11,7 +11,7 @@ class Foo implements \Countable
     {
         return true;
     }
-    public function count()
+    public function count(): int
     {
         return 1;
     }
